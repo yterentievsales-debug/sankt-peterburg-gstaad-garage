@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow" data-publish>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gstaad Garage · Детейлинг и автомойка</title>
+<meta name="description" content="Мойка, химчистка салона, керамика, оклейка плёнкой и шиномонтаж. Цены на сайте, запись на удобное время.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Детейлинг и мойка в Санкт-Петербурге: химчистка, керамика, плёнка">
+<meta property="og:description" content="Мойка, химчистка салона, керамика, оклейка плёнкой и шиномонтаж. Цены на сайте, запись на удобное время.">
+<meta property="og:image" content="assets/hero.webp">
+<link rel="preload" as="image" href="assets/hero.webp" fetchpriority="high">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect x=%276%27 y=%276%27 width=%2720%27 height=%2720%27 rx=%275%27 fill=%27%23d4af37%27/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root { --c-canvas: #12100c; --c-surface: #1d1a14; --c-ink: #f4efe6; --c-ink-soft: #aaa294; --c-accent: #d4af37; --c-accent-ink: #1a1403; --c-accent-deep: #d4af37; --f-display: "Rubik", "Arial", system-ui, sans-serif; --f-text: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif; --h1k: 0.66; }
+</style>
+<link rel="stylesheet" href="style-prod.css">
+<style>
+/* ---- виджет-сотрудник: отвечаем сразу, круглосуточно ------------------- */
+.agent { position: fixed; right: clamp(12px, 2vw, 28px); bottom: clamp(12px, 2.4vh, 28px); z-index: 60;
+  display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--c-ink); }
+.agent__bubble { display: grid; gap: 2px; padding: 10px 16px; border-radius: 16px 16px 4px 16px;
+  background: var(--c-surface); box-shadow: 0 10px 30px rgb(0 0 0 / .45), 0 0 0 1px rgb(255 255 255 / .08);
+  font-family: var(--f-text); line-height: 1.25; max-width: 15rem;
+  opacity: 0; transform: translateY(8px); animation: agent-in .5s 1.4s cubic-bezier(.2,.7,.2,1) forwards; }
+.agent__bubble b { font-size: .95rem; font-weight: 700; }
+.agent__bubble span { font-size: .8rem; color: var(--c-ink-soft); }
+.agent__photo { position: relative; flex: none; width: 64px; height: 64px; border-radius: 50%;
+  box-shadow: 0 0 0 3px var(--c-accent), 0 10px 26px rgb(0 0 0 / .45); transition: transform .2s ease-out; }
+.agent__photo img { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; }
+.agent__photo::before { content: ""; position: absolute; inset: -3px; border-radius: 50%; border: 2px solid var(--c-accent);
+  animation: agent-pulse 2.6s ease-out infinite; pointer-events: none; }
+.agent__photo i { position: absolute; right: 1px; bottom: 1px; width: 15px; height: 15px; border-radius: 50%;
+  background: #2fbf5b; box-shadow: 0 0 0 3px var(--c-surface); }
+.agent:hover .agent__photo, .agent:focus-visible .agent__photo { transform: scale(1.05); }
+.agent:focus-visible { outline: 2px solid var(--c-accent); outline-offset: 4px; border-radius: 40px; }
+@keyframes agent-in { to { opacity: 1; transform: none; } }
+@keyframes agent-pulse { 0% { opacity: .8; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.35); } }
+.agent__photo b { display: none; position: absolute; left: 50%; bottom: -9px; transform: translateX(-50%); padding: 1px 6px; border-radius: 8px;
+  background: var(--c-accent); color: var(--c-accent-ink); font: 700 10px/1.4 var(--f-text); white-space: nowrap; }
+@media (max-width: 640px) {
+  .agent { bottom: calc(80px + env(safe-area-inset-bottom)); }
+  .agent__bubble { display: none; }
+  .agent__photo { width: 54px; height: 54px; }
+  .agent__photo i { right: -2px; bottom: auto; top: 0; width: 13px; height: 13px; }
+  .agent__photo b { display: block; }
+}
+.agent { transition: opacity .25s ease-out, transform .25s ease-out; }
+.agent.is-away { opacity: 0; transform: translateY(10px); pointer-events: none; }
+@media (prefers-reduced-motion: reduce) { .agent__bubble { animation: none; opacity: 1; transform: none; } .agent__photo::before { animation: none; opacity: 0; } }
+/* ---- правки Юрия 08.10.2026 --------------------------------------------- */
+/* заголовок первого экрана: слова не переносятся и не рвутся, слова с дефисом не разрываются */
+.s-hero h1 { hyphens: none; -webkit-hyphens: none; overflow-wrap: normal; word-break: normal; }
+.s-hero h1 .nb { white-space: nowrap; }
+/* верхняя шапка (имя компании, телефон, кнопка) крупнее на 25 % */
+.s-bar { padding-top: 12px; padding-bottom: 12px; }
+.s-bar__brand { font-size: 1.25rem; min-height: 48px; }
+.s-bar__tel { font-size: 1.2rem; }
+.s-bar .s-btn--sm { font-size: 1.05rem; min-height: 46px; }
+@media (max-width: 640px) {
+  .s-bar__brand { font-size: 1.15rem; }
+  .s-bar .s-btn--sm { font-size: .98rem; min-height: 44px; padding: 0 1em; }
+}
+</style>
+</head>
+<body class="s-prod" id="top" data-wa="" data-tg="+79219933936" data-max="">
+<header class="s-bar" data-s-bar>
+  <a class="s-bar__brand" href="#top"><i aria-hidden="true"></i>Gstaad Garage</a>
+  <div class="s-bar__right">
+    <a class="s-bar__tel" href="tel:+79219933936">+7 (921) 993-39-36</a>
+    <a class="s-btn s-btn--sm" href="#widget">Записаться</a>
+  </div>
+</header>
+<main>
+  <section class="s-hero">
+    <div class="s-hero__text">
+      <p class="s-eyebrow">Детейлинг, мойка, шиномонтаж · Санкт-Петербург</p>
+      <h1>Детейлинг и мойка в <span class="nb">Санкт-Петербурге</span>: химчистка, керамика, плёнка</h1>
+      <p class="s-lead">Мойка, химчистка салона, керамика, оклейка плёнкой и шиномонтаж. Цены на сайте, запись на удобное время.</p>
+      <ul class="s-ticks"><li>Мойка, химчистка салона и полировка кузова</li><li>Керамика и оклейка защитной плёнкой</li><li>Шиномонтаж и сезонное хранение шин</li></ul>
+      <p class="s-rating"><b>4,9</b> на Яндекс.Картах · 268 отзывов</p>
+      <figure class="s-hero__photo"><img class="" src="assets/hero.webp" alt="Здание Gstaad Garage с вывеской Carwash Detailing на Малой Посадской" loading="lazy" decoding="async" style="object-position:50% 50%"></figure>
+    </div>
+    <div class="s-hero__widget" id="widget"><form class="s-widget" data-s-booking data-days="7" data-closed="" data-slots="09:00,10:00,11:00,12:00,13:00,14:00,15:00,16:00,17:00,18:00,19:00,20:00" data-message="Здравствуйте! Хочу записаться в сервис: {услуга}, {день} в {время}. Марку, год и что беспокоит – напишу ниже." onsubmit="return false">
+      <h2 class="s-widget__title">Запись</h2>
+      <fieldset><legend>Услуга</legend>
+        <div class="s-chips s-chips--col"><label class="s-chip s-chip--row"><input type="radio" name="svc" value="0" data-name="Комплекс «Петербургский Стандарт»" data-price="3210" data-from="" data-min="" checked><span>Комплекс «Петербургский Стандарт»</span><b>3 210 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="1" data-name="Мойка «Премиум»" data-price="5200" data-from="" data-min=""><span>Мойка «Премиум»</span><b>5 200 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="2" data-name="Химчистка сиденья" data-price="2200" data-from="" data-min=""><span>Химчистка сиденья</span><b>2 200 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="3" data-name="Глубокая полировка кузова" data-price="33000" data-from="" data-min=""><span>Глубокая полировка кузова</span><b>33 000 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="4" data-name="Керамическое покрытие" data-price="18000" data-from="" data-min=""><span>Керамическое покрытие</span><b>18 000 ₽</b></label><label class="s-chip s-chip--row"><input type="radio" name="svc" value="5" data-name="Смена резины R18" data-price="6600" data-from="" data-min=""><span>Смена резины R18</span><b>6 600 ₽</b></label></div>
+      </fieldset>
+      <fieldset><legend>День</legend><div class="s-chips" data-s-days></div></fieldset>
+      <fieldset><legend>Время</legend><div class="s-chips" data-s-times></div></fieldset>
+      <div class="s-bubble" aria-live="polite"><span class="s-bubble__label">Ваше сообщение</span><p data-s-bubble></p></div>
+      <div class="s-send">
+        <a class="s-btn s-btn--wide" data-s-msg="telegram" href="#">Записаться в Telegram</a>
+      </div>
+      <p class="s-send__note" data-s-copied hidden>Текст скопирован – вставьте его в чат.</p>
+      
+    </form></div>
+    <figure class="s-hero__bg" aria-hidden="true"><img class="" src="assets/hero.webp" alt="Здание Gstaad Garage с вывеской Carwash Detailing на Малой Посадской" decoding="async" style="object-position:50% 50%" fetchpriority="high"></figure>
+  </section>
+
+  
+
+  <section class="s-section s-reveal" id="prices">
+    <header class="s-section__head"><h2>Цены</h2><p>Цены на основные работы. Актуальную сумму для вашего автомобиля назовём при записи.</p></header>
+    <div class="s-board"><div class="s-board__group">
+      <h3 class="s-board__title">Мойка</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Комплекс «Петербургский Стандарт»<em>седан, кроссовер</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">3 210 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Мойка «Премиум»<em>седан, кроссовер</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">5 200 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Детейлинг-мойка двигателя с консервацией</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">3 800 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Детейлинг-мойка мотоцикла</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 500 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Химчистка салона</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Химчистка сиденья</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 200 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Химчистка кожаного сиденья</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 800 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Химчистка потолка со стойками</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">5 800 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Химчистка багажного отделения</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 200 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Устранение неприятных запахов из салона</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 800 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Кузов и керамика</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Глубокая полировка кузова</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">33 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Быстрое керамическое покрытие кузова</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">18 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Очистка кузова глиной</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">6 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Удаление вмятин<em>любой сложности</em></span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">8 800 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Локальная покраска сколов и царапин</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">12 800 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Плёнка и тонировка</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Защита фар полиуретановой плёнкой</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">12 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Оклейка «Городской пакет»</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">128 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Оклейка кузова целиком защитной плёнкой (PPF)</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">333 000 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Тонировка задней полусферы</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">18 000 ₽</span></li>
+      </ul>
+    </div>
+<div class="s-board__group">
+      <h3 class="s-board__title">Шины</h3>
+      <ul class="s-board__list">
+        <li class="s-board__row"><span class="s-board__name">Сезонная смена резины R18</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">6 600 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Сезонное хранение шин</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">5 800 ₽</span></li>
+        <li class="s-board__row"><span class="s-board__name">Ремонт прокола колеса</span><span class="s-board__dots" aria-hidden="true"></span><span class="s-board__price">2 800 ₽</span></li>
+      </ul>
+    </div></div>
+    <p class="s-note">Нужной работы нет в списке – напишите нам, посчитаем.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Как проходит</h2></header>
+    <ol class="s-steps">
+      <li class="s-steps__item"><span class="s-steps__n">01</span><h3>Записались на время</h3><p>В форме выше, по телефону или в мессенджере.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">02</span><h3>Приехали к нам</h3><p>Ждём вас по адресу: Малая Посадская ул., 13Д.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">03</span><h3>Согласовали работы</h3><p>Мастер уточняет задачу и называет стоимость.</p></li>
+      <li class="s-steps__item"><span class="s-steps__n">04</span><h3>Забрали машину</h3><p>Готово к назначенному времени.</p></li>
+    </ol>
+  </section>
+
+  <section class="s-photos s-reveal" aria-label="Фото"><figure><img class="" src="assets/wait.webp" alt="Зона ожидания: кожаные кресла и диван" loading="lazy" decoding="async" style="object-position:50% 50%"><figcaption>Зона ожидания</figcaption></figure><figure><img class="" src="assets/bay.webp" alt="Автомобиль в боксе с сотовой подсветкой" loading="lazy" decoding="async" style="object-position:50% 50%"><figcaption>Бокс студии</figcaption></figure><figure><img class="" src="assets/reception.webp" alt="Стойка администратора с логотипом GG" loading="lazy" decoding="async" style="object-position:50% 50%"><figcaption>Ресепшн</figcaption></figure></section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Что здесь есть</h2></header>
+    <ul class="s-promises">
+      <li><h3>Мойка и химчистка</h3><p>Комплекс «Петербургский Стандарт», мойка «Премиум», химчистка салона.</p></li>
+      <li><h3>Полировка и керамика</h3><p>Глубокая полировка, керамическое покрытие, удаление вмятин.</p></li>
+      <li><h3>Плёнка и тонировка</h3><p>Защитная оклейка, защита фар, тонировка.</p></li>
+      <li><h3>Шиномонтаж</h3><p>Сезонная смена резины, ремонт проколов и хранение шин.</p></li>
+    </ul>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head s-section__head--reviews"><h2>Отзывы с Яндекс.Карт</h2><p class="s-reviews__rating"><span class="s-reviews__num">4,9</span><span class="s-reviews__stars" style="--r: 4.9" aria-label="рейтинг 4,9 из 5"></span><span class="s-reviews__count">268 отзывов</span><a class="s-reviews__all" href="https://yandex.ru/maps/org/gstaad_garage/98751923106/reviews/" target="_blank" rel="noopener">Читать все отзывы на Яндекс.Картах</a></p></header>
+    <ul class="s-reviews">
+      <li><blockquote>«Отличная мойка! Машину отмыли так , что забирал как из салона новую))) Записался заранее, приняли по времени, всё отлично. Можно пригнать и оставить, можно у них посидеть. Ребята отлично делают свою работу!!! Приятно удивлён.»</blockquote><p class="s-reviews__who">илья уральский · 25 июля</p></li>
+      <li><blockquote>«Была вмятина на крыле, очень не хотел перекрашивать деталь. Мастера вытянули все до единого , следов вообще не осталось ни капельки . Сэкономил дофига времени и денег, отличный сервис все понравилось»</blockquote><p class="s-reviews__who">Артем Вербицкий · 14 апреля</p></li>
+      <li><blockquote>«Замечательные ребята здесь работают, все делают качественно и бережно к автомобилю. Давно мою машину именно здесь, дважды обращалась со сложными случаями: изрисованная машина и после ДТП- все сделали отлично, быстро и лояльно по цене. Благодарю и рекомендую!»</blockquote><p class="s-reviews__who">Александра Кузнецова · 6 апреля</p></li>
+    </ul>
+    <p class="s-note">Отзывы с карточки на Яндекс.Картах, без правок.</p>
+  </section>
+
+  <section class="s-section s-reveal">
+    <header class="s-section__head"><h2>Частые вопросы</h2></header>
+    <div class="s-faq"><details><summary>Нужна ли запись?</summary><p>Лучше записаться: выберите время в форме выше или напишите нам в Telegram. Мы принимаем клиентов к назначенному времени.</p></details><details><summary>Сколько стоит мойка?</summary><p>Комплекс «Петербургский Стандарт» для седана и кроссовера стоит 3 210 ₽, мойка «Премиум» – 5 200 ₽.</p></details><details><summary>Делаете ли вы шиномонтаж?</summary><p>Да, мы меняем резину на сезон и храним шины: смена резины R18 – 6 600 ₽, сезонное хранение – 5 800 ₽.</p></details><details><summary>Когда вы работаете?</summary><p>Мы работаем ежедневно: с понедельника по пятницу с 8:00 до 21:00, в субботу и воскресенье с 9:00 до 21:00. Адрес: Малая Посадская улица, 13Д.</p></details></div>
+  </section>
+
+  <section class="s-section s-final s-reveal" id="contacts">
+    <header class="s-section__head"><h2>Запишитесь на удобное время</h2></header>
+    <div class="s-contacts">
+      <dl>
+        <div><dt>Адрес</dt><dd>Малая Посадская ул., 13Д, Санкт-Петербург</dd></div>
+        <div><dt>Часы</dt><dd>Пн–Пт 8:00–21:00, Сб–Вс 9:00–21:00</dd></div>
+        <div><dt>Телефон</dt><dd><a href="tel:+79219933936">+7 (921) 993-39-36</a></dd></div>
+      </dl>
+      <div class="s-contacts__actions">
+        <a class="s-btn" href="#widget">Записаться</a>
+        
+        <a class="s-btn s-btn--ghost" data-s-msg="telegram" href="#">Telegram</a>
+      </div>
+    </div>
+  </section>
+</main>
+<!-- agent-widget -->
+<a class="agent" href="#widget" aria-label="Написать нам: отвечаем сразу, круглосуточно">
+  <span class="agent__bubble"><b>Отвечаем сразу</b><span>круглосуточно, администратор на связи</span></span>
+  <span class="agent__photo"><img src="assets/agent.webp" alt="" width="64" height="64" loading="lazy"><i aria-hidden="true"></i><b aria-hidden="true">24/7</b></span>
+</a>
+<!-- /agent-widget -->
+<footer class="s-foot"><p>Gstaad Garage · Санкт-Петербург</p><p>Детейлинг и автомойка</p></footer>
+<nav class="s-dock" aria-label="Быстрая связь"><a class="s-btn" href="#widget">Записаться</a><a class="s-btn s-btn--ghost" href="tel:+79219933936">Позвонить</a></nav>
+<script src="style.js" defer></script>
+<script>
+  // кружок менеджера прячется, пока на экране форма записи (не наезжает на неё)
+  (function () {
+    var a = document.querySelector('.agent'), w = document.getElementById('widget');
+    if (!a || !w || !('IntersectionObserver' in window)) return;
+    new IntersectionObserver(function (es) { a.classList.toggle('is-away', es[0].isIntersecting); }, { rootMargin: '0px 0px -90px 0px' }).observe(w);
+  })();
+</script>
+</body>
+</html>
